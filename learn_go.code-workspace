@@ -17,6 +17,10 @@
 			"path": "./logger-service"
 		},
 		{
+			"name": "Mailer",
+			"path": "./mail-service"
+		},
+		{
 			"name": "Project Admin",
 			"path": "./project"
 		}
