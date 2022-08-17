@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"name": "Auth Service",
+			"path": "./authentication-service"
+		},
+		{
+			"name": "Broker Service",
+			"path": "./broker-service"
+		},
+		{
+			"name": "Frontend",
+			"path": "./front-end"
+		},
+		{
+			"name": "Logger",
+			"path": "./logger-service"
+		},
+		{
+			"name": "Project Admin",
+			"path": "./project"
+		}
+	],
+	"settings": {
+		"makefile.makeDirectory": "./project",
+		"makefile.extensionOutputFolder": "./.vscode"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.makefile-tools"
+		]
+	}
+}
