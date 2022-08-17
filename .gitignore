@@ -1,6 +1,13 @@
+# Ignore seed data and DB binaries
 project/db/data/postgres
 project/db-data/postgres
 project/db-data/mongo
+
+# Ignore build binaries
+authentication-service/authApp
+broker-service/brokerApp
+front-end/frontApp
+logger-service/loggerServiceApp
 
 # Binaries for programs and plugins
 *.exe
