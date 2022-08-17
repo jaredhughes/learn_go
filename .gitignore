@@ -1,5 +1,6 @@
 project/db/data/postgres
 project/db-data/postgres
+project/db-data/mongo
 
 # Binaries for programs and plugins
 *.exe
