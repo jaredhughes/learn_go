@@ -4,10 +4,9 @@ project/db-data/postgres
 project/db-data/mongo
 
 # Ignore build binaries
-authentication-service/authApp
-broker-service/brokerApp
+bin
+# TODO: embed HTML templates
 front-end/frontApp
-logger-service/loggerServiceApp
 
 # Binaries for programs and plugins
 *.exe
