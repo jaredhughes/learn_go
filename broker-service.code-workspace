@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "broker-service"
+		},
+		{
+			"path": "front-end"
+		},
+		{
+			"path": "project"
+		},
+		{
+			"path": "authentication-service"
+		},
+		{
+			"path": "logger-service"
+		}
+	],
+	"settings": {
+		"makefile.extensionOutputFolder": "./.vscode"
+	}
+}
