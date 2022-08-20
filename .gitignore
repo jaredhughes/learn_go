@@ -2,6 +2,7 @@
 project/db/data/postgres
 project/db-data/postgres
 project/db-data/mongo
+project/db-data/rabbitmq
 
 # Ignore build binaries
 bin

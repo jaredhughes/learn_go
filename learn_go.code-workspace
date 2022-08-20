@@ -17,6 +17,10 @@
 			"path": "./logger-service"
 		},
 		{
+			"name": "Listener",
+			"path": "./listener-service"
+		},
+		{
 			"name": "Mailer",
 			"path": "./mail-service"
 		},
