@@ -26,3 +26,5 @@ front-end/frontApp
 
 # Go workspace file
 go.work
+
+*.log
