@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"net/http"
+	"net/rpc"
 
 	"github.com/tsawler/toolbox"
 )
@@ -57,7 +58,7 @@ func (app *Config) HandleSubmission(w http.ResponseWriter, r *http.Request) {
 	case "auth":
 		app.authenticate(w, requestPayload.Auth)
 	case "log":
-		app.logEventViaRabbit(w, requestPayload.Log)
+		app.logItemViaRPC(w, requestPayload.Log)
 	case "mail":
 		app.sendMail(w, requestPayload.Mail)
 	default:
@@ -176,6 +177,37 @@ func (app *Config) sendMail(w http.ResponseWriter, msg MailPayload) {
 	var payload jsonResponse
 	payload.Error = false
 	payload.Message = "Send to " + msg.To
+
+	tools.WriteJSON(w, http.StatusAccepted, payload)
+}
+
+type RPCPayload struct {
+	Name string
+	Data string
+}
+
+func (app *Config) logItemViaRPC(w http.ResponseWriter, l LogPayload) {
+	var tools toolbox.Tools
+	client, err := rpc.Dial("tcp", "logger-service:5001")
+	if err != nil {
+		tools.ErrorJSON(w, err)
+	}
+
+	rpcPayload := RPCPayload{
+		Name: l.Name,
+		Data: l.Data,
+	}
+
+	var result string
+	err = client.Call("RPCServer.LogInfo", rpcPayload, &result)
+	if err != nil {
+		tools.ErrorJSON(w, err)
+	}
+
+	payload := jsonResponse{
+		Error:   false,
+		Message: result,
+	}
 
 	tools.WriteJSON(w, http.StatusAccepted, payload)
 }
