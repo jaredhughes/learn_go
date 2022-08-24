@@ -16,12 +16,7 @@ jobs:
       - name: Setup Go 1.16.x
         uses: actions/setup-go@v3
         with:
-          go-version: "1.19.x"
-
-      - name: Install dependencies
-        run: |
-          cd authentication-service
-          go get .
+          go-version-file: "authentication-service/go.mod"
 
       - name: Test Auth Service
         run: |
