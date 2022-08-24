@@ -16,7 +16,9 @@ jobs:
       - name: Setup Go 1.16.x
         uses: actions/setup-go@v3
         with:
-          go-version-file: "authentication-service/go.mod"
+          go-version-file: authentication-service/go.mod
+          cache: true
+          cache-dependency-path: authentication-service/go.sum
 
       - name: Test Auth Service
         run: |
