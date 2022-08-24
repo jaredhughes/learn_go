@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"name": "GitHub",
+			"path": "./.github"
+		},
+		{
 			"name": "Auth Service",
 			"path": "./authentication-service"
 		},
